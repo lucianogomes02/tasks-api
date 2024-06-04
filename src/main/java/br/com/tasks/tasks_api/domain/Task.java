@@ -1,7 +1,10 @@
 package br.com.tasks.tasks_api.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -23,13 +26,14 @@ public class Task {
     private TaskStatus status;
 
 
-    private Date created_at;
-    private Date updated_at;
+    private Date createdAt;
+    private Date updatedAt;
 
     public Task(String title, Time time) {
         this.title = title;
         this.time = time;
         this.status = TaskStatus.PENDING;
+        this.createdAt = new Date(System.currentTimeMillis());
     }
 
     public void start() {
