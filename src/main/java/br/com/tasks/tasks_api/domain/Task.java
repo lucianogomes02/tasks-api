@@ -36,11 +36,16 @@ public class Task {
         this.createdAt = new Date(System.currentTimeMillis());
     }
 
-    public void start() {
+    public Task start() {
         this.status = TaskStatus.STARTED;
+        this.updatedAt = new Date(System.currentTimeMillis());
+        return this;
     }
 
-    public void finish() {
-        this.status = TaskStatus.FINISHED;
+    public Task finish() {
+        this.status = TaskStatus.DONE;
+        this.time = new Time(0, 0, 0);
+        this.updatedAt = new Date(System.currentTimeMillis());
+        return this;
     }
 }

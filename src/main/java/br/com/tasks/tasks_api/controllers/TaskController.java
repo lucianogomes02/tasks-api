@@ -3,6 +3,7 @@ package br.com.tasks.tasks_api.controllers;
 import br.com.tasks.tasks_api.domain.Task;
 import br.com.tasks.tasks_api.dto.CreateTaskDTO;
 import br.com.tasks.tasks_api.dto.TaskDTO;
+import br.com.tasks.tasks_api.dto.UpdateTaskDTO;
 import br.com.tasks.tasks_api.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,13 @@ public class TaskController {
         var task = taskService.createTask(createTaskDTO);
         var uri = uriBuilder.path("/tasks/{id}").buildAndExpand(task.id()).toUri();
         return ResponseEntity.created(uri).body(task);
+    }
+
+    @PatchMapping
+    @Transactional
+    public ResponseEntity<UpdateTaskDTO> updateTask(@RequestBody @Valid UpdateTaskDTO updatedTaskDTO) {
+        var task = taskService.updateTask(updatedTaskDTO);
+        return ResponseEntity.ok(task);
     }
 
 }

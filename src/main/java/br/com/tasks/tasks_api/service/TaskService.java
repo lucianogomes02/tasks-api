@@ -1,8 +1,10 @@
 package br.com.tasks.tasks_api.service;
 
 import br.com.tasks.tasks_api.domain.Task;
+import br.com.tasks.tasks_api.domain.TaskEventHandler;
 import br.com.tasks.tasks_api.dto.CreateTaskDTO;
 import br.com.tasks.tasks_api.dto.TaskDTO;
+import br.com.tasks.tasks_api.dto.UpdateTaskDTO;
 import br.com.tasks.tasks_api.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +17,9 @@ public class TaskService {
 
     @Autowired
     private TaskRepository taskRepository;
+
+    @Autowired
+    private TaskEventHandler taskEventHandler;
 
     public TaskDTO createTask(CreateTaskDTO createTaskDTO) {
         Task task = new Task(createTaskDTO.title(), createTaskDTO.time());
@@ -31,5 +36,14 @@ public class TaskService {
 
     public Page<Task> findAllTasks(@PageableDefault(size = 10, sort = {"title"}) Pageable pageable) {
         return taskRepository.findAll(pageable);
+    }
+
+    public UpdateTaskDTO updateTask(UpdateTaskDTO updateTaskDTO) {
+        var task = taskRepository.findById(updateTaskDTO.id());
+
+        var taskUpdated = taskEventHandler.handleTaskUpdated(updateTaskDTO, task.get());
+        taskRepository.save(taskUpdated);
+
+        return new UpdateTaskDTO(taskUpdated.getId(), taskUpdated.getStatus().toString());
     }
 }
