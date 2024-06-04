@@ -35,4 +35,8 @@ public class Task {
     public void start() {
         this.status = TaskStatus.STARTED;
     }
+
+    public void finish() {
+        this.status = TaskStatus.FINISHED;
+    }
 }
