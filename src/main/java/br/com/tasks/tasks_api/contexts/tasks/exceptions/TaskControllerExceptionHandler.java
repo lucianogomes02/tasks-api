@@ -1,5 +1,6 @@
 package br.com.tasks.tasks_api.contexts.tasks.exceptions;
 
+import br.com.tasks.tasks_api.libs.exception.ExceptionDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
