@@ -41,9 +41,9 @@ public class TaskController {
     public ResponseEntity<TaskDTO> createTask(@RequestBody @Valid CreateTaskDTO createTaskDTO, UriComponentsBuilder uriBuilder) {
         ScheduleTask command = new ScheduleTask(createTaskDTO, taskService);
         commandHandler.handle(command);
-        var task = command.getTaskScheduled();
-        var uri = uriBuilder.path("/tasks/{id}").buildAndExpand(task.id()).toUri();
-        return ResponseEntity.created(uri).body(task);
+        var scheduledTask = command.getTaskScheduled();
+        var uri = uriBuilder.path("/tasks/{id}").buildAndExpand(scheduledTask.id()).toUri();
+        return ResponseEntity.created(uri).body(scheduledTask);
     }
 
     @PatchMapping
