@@ -1,5 +1,6 @@
-package br.com.tasks.tasks_api.contexts.tasks.domain;
+package br.com.tasks.tasks_api.contexts.tasks.domain.aggregate;
 
+import br.com.tasks.tasks_api.contexts.tasks.domain.value_objects.TaskStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

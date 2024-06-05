@@ -1,5 +1,6 @@
 package br.com.tasks.tasks_api.contexts.tasks.domain;
 
+import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
 import br.com.tasks.tasks_api.contexts.tasks.dto.UpdateTaskDTO;
 import org.springframework.stereotype.Service;
 

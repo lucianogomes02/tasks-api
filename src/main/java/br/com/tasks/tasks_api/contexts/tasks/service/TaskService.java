@@ -1,7 +1,7 @@
 package br.com.tasks.tasks_api.contexts.tasks.service;
 
-import br.com.tasks.tasks_api.contexts.tasks.domain.Task;
 import br.com.tasks.tasks_api.contexts.tasks.domain.TaskEventHandler;
+import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
 import br.com.tasks.tasks_api.contexts.tasks.dto.CreateTaskDTO;
 import br.com.tasks.tasks_api.contexts.tasks.dto.TaskDTO;
 import br.com.tasks.tasks_api.contexts.tasks.dto.UpdateTaskDTO;

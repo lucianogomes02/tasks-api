@@ -1,6 +1,6 @@
 package br.com.tasks.tasks_api.contexts.tasks.repository;
 
-import br.com.tasks.tasks_api.contexts.tasks.domain.Task;
+import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
