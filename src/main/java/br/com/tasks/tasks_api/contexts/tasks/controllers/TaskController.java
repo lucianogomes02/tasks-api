@@ -1,10 +1,10 @@
-package br.com.tasks.tasks_api.controllers;
+package br.com.tasks.tasks_api.contexts.tasks.controllers;
 
-import br.com.tasks.tasks_api.domain.Task;
-import br.com.tasks.tasks_api.dto.CreateTaskDTO;
-import br.com.tasks.tasks_api.dto.TaskDTO;
-import br.com.tasks.tasks_api.dto.UpdateTaskDTO;
-import br.com.tasks.tasks_api.service.TaskService;
+import br.com.tasks.tasks_api.contexts.tasks.domain.Task;
+import br.com.tasks.tasks_api.contexts.tasks.dto.CreateTaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.dto.TaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.dto.UpdateTaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

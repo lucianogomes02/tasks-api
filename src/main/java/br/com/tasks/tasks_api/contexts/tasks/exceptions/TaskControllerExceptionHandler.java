@@ -1,4 +1,4 @@
-package br.com.tasks.tasks_api.exceptions;
+package br.com.tasks.tasks_api.contexts.tasks.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package br.com.tasks.tasks_api.domain;
+package br.com.tasks.tasks_api.contexts.tasks.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

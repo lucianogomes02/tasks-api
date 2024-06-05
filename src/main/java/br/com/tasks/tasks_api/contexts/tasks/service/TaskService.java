@@ -1,11 +1,11 @@
-package br.com.tasks.tasks_api.service;
+package br.com.tasks.tasks_api.contexts.tasks.service;
 
-import br.com.tasks.tasks_api.domain.Task;
-import br.com.tasks.tasks_api.domain.TaskEventHandler;
-import br.com.tasks.tasks_api.dto.CreateTaskDTO;
-import br.com.tasks.tasks_api.dto.TaskDTO;
-import br.com.tasks.tasks_api.dto.UpdateTaskDTO;
-import br.com.tasks.tasks_api.repository.TaskRepository;
+import br.com.tasks.tasks_api.contexts.tasks.domain.Task;
+import br.com.tasks.tasks_api.contexts.tasks.domain.TaskEventHandler;
+import br.com.tasks.tasks_api.contexts.tasks.dto.CreateTaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.dto.TaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.dto.UpdateTaskDTO;
+import br.com.tasks.tasks_api.contexts.tasks.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
