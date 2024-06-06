@@ -1,8 +1,8 @@
 package br.com.tasks.tasks_api.libs.command;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class CommandHandler {
     public void handle(Command command) {
         command.execute();

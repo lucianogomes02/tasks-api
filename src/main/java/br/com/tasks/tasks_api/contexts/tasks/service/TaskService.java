@@ -1,6 +1,6 @@
 package br.com.tasks.tasks_api.contexts.tasks.service;
 
-import br.com.tasks.tasks_api.contexts.tasks.domain.TaskEventHandler;
+import br.com.tasks.tasks_api.contexts.tasks.domain.TaskUpdateEventHandler;
 import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
 import br.com.tasks.tasks_api.contexts.tasks.dto.CreateTaskDTO;
 import br.com.tasks.tasks_api.contexts.tasks.dto.TaskDTO;
@@ -19,7 +19,7 @@ public class TaskService {
     private TaskRepository taskRepository;
 
     @Autowired
-    private TaskEventHandler taskEventHandler;
+    private TaskUpdateEventHandler taskEventHandler;
 
     public TaskDTO createTask(CreateTaskDTO createTaskDTO) {
         Task task = new Task(createTaskDTO.title(), createTaskDTO.time());
