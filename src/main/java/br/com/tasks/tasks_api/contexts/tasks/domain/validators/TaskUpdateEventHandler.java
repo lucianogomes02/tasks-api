@@ -1,9 +1,6 @@
-package br.com.tasks.tasks_api.contexts.tasks.domain;
+package br.com.tasks.tasks_api.contexts.tasks.domain.validators;
 
 import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
-import br.com.tasks.tasks_api.contexts.tasks.domain.validators.FinishTask;
-import br.com.tasks.tasks_api.contexts.tasks.domain.validators.StartTask;
-import br.com.tasks.tasks_api.contexts.tasks.domain.validators.TaskUpdateValidationStrategy;
 import br.com.tasks.tasks_api.contexts.tasks.dto.UpdateTaskDTO;
 import org.springframework.stereotype.Component;
 
