@@ -2,6 +2,7 @@ package br.com.tasks.tasks_api.contexts.tasks.controllers;
 
 import br.com.tasks.tasks_api.contexts.tasks.domain.aggregate.Task;
 import br.com.tasks.tasks_api.contexts.tasks.domain.commands.ListAllTasksCommand;
+import br.com.tasks.tasks_api.contexts.tasks.domain.commands.ListAllTasksCreatedAt;
 import br.com.tasks.tasks_api.contexts.tasks.domain.commands.ScheduleTask;
 import br.com.tasks.tasks_api.contexts.tasks.domain.commands.StartOrFinishTask;
 import br.com.tasks.tasks_api.contexts.tasks.dto.CreateTaskDTO;
@@ -32,6 +33,16 @@ public class TaskController {
     @GetMapping
     public ResponseEntity<Page<Task>> findAllTasks(@PageableDefault(size = 10, sort = {"title"}) Pageable pageable) {
         ListAllTasksCommand command = new ListAllTasksCommand(pageable, taskService);
+        commandHandler.handle(command);
+        return ResponseEntity.ok(command.getTasks());
+    }
+
+    @GetMapping("/{createdAt}")
+    public ResponseEntity<Page<Task>> findAllTasksByCreatedAt(
+            @PathVariable String createdAt,
+            @PageableDefault(size = 10, sort = {"title"}) Pageable pageable
+    ) {
+        ListAllTasksCreatedAt command = new ListAllTasksCreatedAt(pageable, taskService, createdAt);
         commandHandler.handle(command);
         return ResponseEntity.ok(command.getTasks());
     }

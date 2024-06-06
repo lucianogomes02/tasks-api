@@ -46,4 +46,8 @@ public class TaskService {
 
         return new UpdateTaskDTO(taskUpdated.getId(), taskUpdated.getStatus().toString());
     }
+
+    public Page<Task> findAllByCreatedAt(Pageable pageable, String createdAt) {
+        return taskRepository.findAllByCreatedAt(pageable, createdAt);
+    }
 }
